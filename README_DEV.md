@@ -43,6 +43,10 @@ To contribute or develop new features, please follow the branching and release p
    git checkout main
    git pull origin main
    git checkout -b feat/your-feature-name
+3. **Entry dev env**
+    ```
+    sudo ./dev.sh
+    ```
 2. **Develop and commit your changes locally** 
 3. **Merge into `dev` first for integration testing.
     ```bash
