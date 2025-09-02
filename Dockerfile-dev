@@ -1,0 +1,17 @@
+FROM python:3.11-slim-bookworm
+
+# Set working directory
+WORKDIR /ws
+
+# Copy AIxtract so packages to /opt/AIxtract
+COPY requirements.txt .
+
+# Install Python requirements
+COPY requirements.txt .
+RUN pip install --upgrade pip && pip install -r requirements.txt
+
+# install pdftohtml（in poppler-utils）
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends poppler-utils && \
+    apt-get install -y --no-install-recommends pdftohtml && \
+    rm -rf /var/lib/apt/lists/*
